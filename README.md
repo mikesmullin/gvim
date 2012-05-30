@@ -7,6 +7,7 @@ Use it if you want, don't if you dont.
 ```bash
 sudo apt-get install vim-gtk
 git clone git://github.com/mikesmullin/gvim.git ~/.vim
+ln -s ~/.vim/.vimrc ~/
 cd ~/.vim
 git submodule update --init --recursive # also run periodically to receive updates
 ```
