@@ -265,4 +265,7 @@ command! -nargs=0 Ctags !ctags -R .
 
 "-- Custom surroundings
 "---- Globalization (g11n) -- press cswt
+"---- see http://www.expandinghead.net/keycode.html
 autocmd FileType php let b:surround_116 = "<?__('\r')?>"
+"---- Globalization (g11n) -- press cswd
+autocmd FileType php let b:surround_100 = "#{define '\r'}"
