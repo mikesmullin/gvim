@@ -43,3 +43,9 @@
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "bundle/vim-vividchalk"]
+	path = bundle/vim-vividchalk
+	url = git://github.com/tpope/vim-vividchalk.git
+[submodule "bundle/DBGp-Remote-Debugger-Interface"]
+	path = bundle/DBGp-Remote-Debugger-Interface
+	url = git://github.com/vim-scripts/DBGp-Remote-Debugger-Interface.git
