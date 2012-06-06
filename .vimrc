@@ -4,7 +4,8 @@ call pathogen#infect()
 filetype plugin on
 "filetype plugin indent on " I don't like auto-indent
 set nu " line numbers on
-set guifont=Monaco\ 11
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+let g:Powerline_symbols = 'fancy'
 "set paste " i like being able to paste most of the time
 set nowrap " wrapping off
 set nocp " not sure how this got here ???
@@ -36,7 +37,7 @@ au! Syntax gherkin source ~/.vim-plugins/vim-cucumber/syntax/cucumber.vim
 
 " gvim like vim
 set guitablabel=%t " prefer file basenames only
-colorscheme gummybears " best looking imho
+colorscheme darkspectrum " best looking imho
 set guioptions+=LlRrbmTi " quirky requirement
 set guioptions-=m  " no file menu bar
 set guioptions-=T  " no toolbar
