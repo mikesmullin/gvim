@@ -28,11 +28,11 @@ set list
 " whitespace cleanup
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\t/  /eg<CR>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 "BufWritePre :%s/\s\+$//g
-"" Gherkin syntax highlighting
+"" syntax highlighting
+au! Syntax gherkin source ~/.vim/bundle/vim-cucumber/syntax/cucumber.vim
 au Bufread,BufNewFile *.feature set filetype=gherkin
 au Bufread,BufNewFile *.scss set filetype=sass
 au Bufread,BufNewFile *.hamstache set filetype=haml
-au! Syntax gherkin source ~/.vim-plugins/vim-cucumber/syntax/cucumber.vim
 "syntax on " for some reason this breaks Gherkin
 
 " gvim like vim
