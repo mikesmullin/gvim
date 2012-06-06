@@ -4,7 +4,7 @@ call pathogen#infect()
 filetype plugin on
 "filetype plugin indent on " I don't like auto-indent
 set nu " line numbers on
-"set guifont=DejaVu\ Sans\ Mono\ 8
+set guifont=Monaco\ 11
 "set paste " i like being able to paste most of the time
 set nowrap " wrapping off
 set nocp " not sure how this got here ???
@@ -14,12 +14,11 @@ set sw=2 ts=2 et " indent with 2 spaces
 set hlsearch " highlight search matches in document
 set incsearch " highlight search matches dynamically as you type them
 set nofoldenable " disable folding; never used
+set formatoptions-=cro " disable continuation of comments onto the next line
 " store vim lockfiles in a centralized directory
 set backupdir=/tmp
 set directory=/tmp
-" attempt to eliminate visual fragments in gvim large res uber
-set ttyscroll=0
-set guifont=liberationmono\ 9
+set ttyscroll=0 " attempt to eliminate visual fragments in gvim large res uber
 " automatically chdir to current file on window focus
 "autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 " show whitespace chars
@@ -37,7 +36,7 @@ au! Syntax gherkin source ~/.vim-plugins/vim-cucumber/syntax/cucumber.vim
 
 " gvim like vim
 set guitablabel=%t " prefer file basenames only
-colorscheme desert " best looking imho
+colorscheme gummybears " best looking imho
 set guioptions+=LlRrbmTi " quirky requirement
 set guioptions-=m  " no file menu bar
 set guioptions-=T  " no toolbar
@@ -160,6 +159,14 @@ map <C-h> <Esc>:%s///g<Left><Left><Left>
 map <F3> <Esc>/<CR>
 "---- alt+d delete whitespace multi-line
 map <M-d> <Esc>i<Right><Space><Esc>d/\S<CR>:noh<CR>i<Space><Esc>
+
+" easy block selection with alt+click/drag mouse
+noremap <M-LeftMouse> <4-LeftMouse>
+inoremap <M-LeftMouse> <4-LeftMouse>
+onoremap <M-LeftMouse> <C-C><4-LeftMouse>
+noremap <M-LeftDrag> <LeftDrag>
+inoremap <M-LeftDrag> <LeftDrag>
+onoremap <M-LeftDrag> <C-C><LeftDrag>
 
 " vim plugins
 "-- NERDTree
