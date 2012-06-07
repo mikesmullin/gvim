@@ -296,23 +296,17 @@ autocmd FileType php map <silent> <F2> :call CleanPHP()<CR>:call CleanWhitespace
 
 "-- vimux
 " Prompt for a command to run
-map rp :PromptVimTmuxCommand<CR>
-
+map <silent> <LocalLeader>rp :PromptVimTmuxCommand<CR>
 " Prompt for a command to run
-map bash :PromptVimTmuxCommand<CR>bash -l<CR>:FocusVimTmuxRunner<CR>
-
+map <silent> <LocalLeader>bash :PromptVimTmuxCommand<CR>bash -l<CR>:FocusVimTmuxRunner<CR>
 " Run last command executed by RunVimTmuxCommand
-map rl :RunLastVimTmuxCommand<CR>
-
+map <silent> <LocalLeader>rl :RunLastVimTmuxCommand<CR>
 " Inspect runner pane
-map ri :InspectVimTmuxRunner<CR>
-
+map <silent> <LocalLeader>ri :InspectVimTmuxRunner<CR>
 " Close all other tmux panes in current window
-map rx :CloseVimTmuxPanes<CR>
-
+map <silent> <LocalLeader>rx :CloseVimTmuxPanes<CR>
 " Interrupt any command running in the runner pane
-map rs :InterruptVimTmuxRunner<CR>
-
+map <silent> <LocalLeader>rs :InterruptVimTmuxRunner<CR>
 " force write as root using sudo (for when you get read-only)
 cmap w!! %!sudo tee > /dev/null %
 
@@ -336,7 +330,7 @@ setlocal isk+=?
 "-- terminal key translations
 map [1;7A <C-M-Up>
 map [1;7B <C-M-Down>
-map OF <End>
-map OH <Insert>
+"map OH <Home>
+"map OF <End>
 map [1;3A <M-Up>
 map [1;3B <M-Down>
