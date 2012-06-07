@@ -24,24 +24,20 @@ set -g default-terminal "screen-256color"
 ```bash
 # ~/.bashrc
 # 256 color support
-export TERM="xterm-256color"
+export TERM="screen-256color"
 alias tmux="tmux -2"
+# disable flow-control so Ctrl+S and Ctrl+Q work in vim
+stty -ixon
 ```
 
 ```bash
 # ~/.profile
 # 256 color support
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-  export TERM='xterm-256color'
+  export TERM='screen-256color'
 else
-  export TERM='xterm-color'
+  export TERM='screen-color'
 fi
-```
-
-```bash
-# disable flow-control so Ctrl+S and Ctrl+Q work in vim
-echo 'stty -ixon' >> ~/.bashrc
-
 ```
 
 

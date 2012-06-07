@@ -139,6 +139,10 @@ map <S-End> v<End>
 imap <S-End> <Esc>l<S-End>
 "--- ctrl+a select all
 map <C-a> ggVG
+"--- ctrl+left or ctrl+right move word
+map <C-Right> e
+map <C-Left> b
+
 
 "-- completely custom key mappings
 nmap o o<Esc>
