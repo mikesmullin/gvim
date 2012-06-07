@@ -328,3 +328,5 @@ map <silent> <LocalLeader>sr :wa<CR> :InferiorSlimeRestart<CR>
 
 map <LocalLeader>rd Orequire 'ruby-debug';debugger<ESC>
 setlocal isk+=?
+
+
