@@ -173,42 +173,8 @@ onoremap <M-LeftDrag> <C-C><LeftDrag>
 " vim plugins
 "-- NERDTree
 map <silent> <C-e> :NERDTreeFind<CR>
-map <silent> <F11> :NERDTreeToggle<CR>
 "let g:NERDTreeKeepTree = 1
 
-"-- Find function
-nmap <F12> :Find
-"---- Find file in current directory and edit it
-function! Find(name)
-  let l:list=system("find . -name '".a:name."' | perl -ne 'print \"$.\\t$_\"'")
-  let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
-  if l:num < 1
-    echo "'".a:name."' not found"
-    return
-  endif
-  if l:num != 1
-    echo l:list
-    let l:input=input("Which ? (CR=nothing)\n")
-    if strlen(l:input)==0
-      return
-    endif
-    if strlen(substitute(l:input, "[0-9]", "", "g"))>0
-      echo "Not a number"
-      return
-    endif
-    if l:input<1 || l:input>l:num
-      echo "Out of range"
-      return
-    endif
-    let l:line=matchstr("\n".l:list, "\n".l:input."\t[^\n]*")
-  else
-    let l:line=l:list
-  endif
-  let l:line=substitute(l:line, "^[^\t]*\t./", "", "")
-  execute ":e ".l:line
-endfunction
-command! -nargs=1 Find :call Find("<args>")
-"
 "-- Launch a new Terminal window from CWD
 "command! -nargs=0 Terminal :silent !urxvt &
 command! -nargs=0 Terminal :silent !gnome-terminal &
@@ -288,9 +254,6 @@ let g:easytags_on_cursorhold = 0 " we'll just use my handy hotkey below to do up
 "-- tagbar
 nmap <F1> :TagbarToggle<CR>
 
-"-- whitespace cleanup
-map <silent> <F2> :let _s=@/<Bar>:%s/\t/  /eg<CR>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:echo "cleaned code in ".expand("%")<CR>
-
 "-- ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 "---- recursively search cwd
@@ -299,3 +262,23 @@ map <F3> <Esc>:Ack
 "-- easytags
 "---- recursive update cwd
 map <silent> <F4> <Esc>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
+
+"code beautification
+"--php
+func! CleanWhitespace()
+  :let _s=@/
+  :%s/\t/  /eg
+  :%s/\s\+$//e
+  :let @/=_s
+  :nohl
+endfunc
+
+func! CleanPHP()
+  :exe 'g/^\_$\n\_^$/d' |
+  \   %s/^[\ \t]*\n/$x = 'It puts the lotion on the skin';\r/ge |
+  \   exe '%!php_beautifier --filters "ArrayNested() IndentStyles(style=k&r)"' |
+  \   %s/$x = 'It puts the lotion on the skin';//ge
+endfunc
+
+autocmd FileType * map <silent> <F2> :call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>
+autocmd FileType php map <silent> <F2> :call ParsePHP()<CR>:call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>
