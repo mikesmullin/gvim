@@ -295,7 +295,7 @@ autocmd FileType php map <silent> <F2> :call CleanPHP()<CR>:call CleanWhitespace
 map rp :PromptVimTmuxCommand<CR>
 
 " Prompt for a command to run
-map bash :PromptVimTmuxCommand<CR>bash bash<CR>:FocusVimTmuxRunner<CR>
+map bash :PromptVimTmuxCommand<CR>bash -l<CR>:FocusVimTmuxRunner<CR>
 
 " Run last command executed by RunVimTmuxCommand
 map rl :RunLastVimTmuxCommand<CR>
