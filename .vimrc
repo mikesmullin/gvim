@@ -288,4 +288,4 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 "-- easytags
 let g:easytags_updatetime_min = 200
-nnoremap <silent> <F5> <Esc>:UpdateTags -R %:p:h<CR>:echo "tags updated for ./".expand("%:h")<CR>
+nnoremap <silent> <F5> <Esc>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
