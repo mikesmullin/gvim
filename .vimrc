@@ -333,4 +333,10 @@ map <silent> <LocalLeader>sr :wa<CR> :InferiorSlimeRestart<CR>
 map <LocalLeader>rd Orequire 'ruby-debug';debugger<ESC>
 setlocal isk+=?
 
-
+"-- terminal key translations
+map [1;7A <C-M-Up>
+map [1;7B <C-M-Down>
+map OF <End>
+map OH <Insert>
+map [1;3A <M-Up>
+map [1;3B <M-Down>
