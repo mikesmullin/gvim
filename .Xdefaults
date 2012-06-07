@@ -1,87 +1,165 @@
 URxvt*scrollBar: false
-URxvt*font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:pixelsize=14
-URxvt*transparent: false
 URxvt*depth: 32
+URxvt*font:           xft:DejaVu Sans Mono for Powerline:regular:size=10
+URxvt*imFont:         xft:DejaVu Sans Mono for Powerline:regular:size=10
+URxvt*boldFont:       xft:DejaVu Sans Mono for Powerline:bold:size=10
+URxvt*italicFont:     xft:DejaVu Sans Mono for Powerline:italic:size=10
+URxvt*boldItalicFont: xft:DejaVu Sans Mono for Powerline:bold:italic:size=10
 
 xterm*metaSendsEscape: true
 xterm*eightBitInput: false
 xterm*faceName:DejaVu\ Sans\ Mono\ for\ Powerline
 xterm*faceSize:10
 
-!! drop in Solarized colorscheme for Xresources/Xdefaults
+! scrollback buffer lines - 65535 is max on most machines (64 is default)
+URxvt*saveLines: 12000
 
-!!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
-!!--------- ------- ---- -------  ----------- ---------- ----------- -----------
-!!base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
-!!base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
-!!base01    #586e75 10/7 brgreen  240 #585858 45 -07 -07  88 110 117 194  25  46
-!!base00    #657b83 11/7 bryellow 241 #626262 50 -07 -07 101 123 131 195  23  51
-!!base0     #839496 12/6 brblue   244 #808080 60 -06 -03 131 148 150 186  13  59
-!!base1     #93a1a1 14/4 brcyan   245 #8a8a8a 65 -05 -02 147 161 161 180   9  63
-!!base2     #eee8d5  7/7 white    254 #e4e4e4 92 -00  10 238 232 213  44  11  93
-!!base3     #fdf6e3 15/7 brwhite  230 #ffffd7 97  00  10 253 246 227  44  10  99
-!!yellow    #b58900  3/3 yellow   136 #af8700 60  10  65 181 137   0  45 100  71
-!!orange    #cb4b16  9/3 brred    166 #d75f00 50  50  55 203  75  22  18  89  80
-!!red       #dc322f  1/1 red      160 #d70000 50  65  45 220  50  47   1  79  86
-!!magenta   #d33682  5/5 magenta  125 #af005f 50  65 -05 211  54 130 331  74  83
-!!violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
-!!blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
-!!cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
-!!green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
+! to match gnome-terminal "Linux console" scheme
+! foreground/background
+URxvt*background: #000000
+URxvt*foreground: #ffffff
+! black
+URxvt.color0  : #000000
+URxvt.color8  : #555555
+! red
+URxvt.color1  : #AA0000
+URxvt.color9  : #FF5555
+! green
+URxvt.color2  : #00AA00
+URxvt.color10 : #55FF55
+! yellow
+URxvt.color3  : #AA5500
+URxvt.color11 : #FFFF55
+! blue
+URxvt.color4  : #0000AA
+URxvt.color12 : #5555FF
+! magenta
+URxvt.color5  : #AA00AA
+URxvt.color13 : #FF55FF
+! cyan
+URxvt.color6  : #00AAAA
+URxvt.color14 : #55FFFF
+! white
+URxvt.color7  : #AAAAAA
+URxvt.color15 : #FFFFFF
 
-#define S_base03        #002b36
-#define S_base02        #073642
-#define S_base01        #586e75
-#define S_base00        #657b83
-#define S_base0         #839496
-#define S_base1         #93a1a1
-#define S_base2         #eee8d5
-#define S_base3         #fdf6e3
-#define S_yellow        #b58900
-#define S_orange        #cb4b16
-#define S_red           #dc322f
-#define S_magenta       #d33682
-#define S_violet        #6c71c4
-#define S_blue          #268bd2
-#define S_cyan          #2aa198
-#define S_green         #859900
+URxvt*letterSpace: -1
 
-*background:            S_base03
-*foreground:            S_base00
-*fading:                40
-*fadeColor:             S_base03
-*cursorColor:           S_base1
-*pointerColorBackground:S_base01
-*pointerColorForeground:S_base1
 
-!! black dark/light
-*color0:                S_base02
-*color8:                S_base03
+! fix modifier keys
+!URxvt.keysym.M-Up:      \033[1;3A
+!URxvt.keysym.M-Down:    \033[1;3B
+!URxvt.keysym.M-Right:   \033[1;3C
+!URxvt.keysym.M-Left:    \033[1;3D
+!URxvt.keysym.M-Prior:   \033[5;3~
+!URxvt.keysym.M-Next:    \033[6;3~
+!URxvt.keysym.M-End:     \033[1;3F
+!URxvt.keysym.M-Home:    \033[1;3H
+!
+!URxvt.keysym.C-Up:      \033[1;5A
+!URxvt.keysym.C-Down:    \033[1;5B
+!URxvt.keysym.C-Right:   \033[1;5C
+!URxvt.keysym.C-Left:    \033[1;5D
+!URxvt.keysym.C-Prior:   \033[5;5~
+!URxvt.keysym.C-Next:    \033[6;5~
+!URxvt.keysym.C-End:     \033[1;5F
+!URxvt.keysym.C-Home:    \033[1;5H
+!URxvt.keysym.Home:          \033[1~
+!URxvt.keysym.End:           \033[4~
+!URxvt.keysym.C-slash:       \033<C-/>
+!URxvt.keysym.C-semicolon:   \033<C-;>
+!URxvt.keysym.C-grave:       \033<C-`>
+!URxvt.keysym.C-comma:       \033<C-,>
+!URxvt.keysym.C-period:      \033<C-.>
+!URxvt.keysym.C-0x60:        \033<C-`>
+!URxvt.keysym.C-Tab:         \033<C-Tab>
+!URxvt.keysym.C-Return:      \033<C-Return>
+!URxvt.keysym.S-Return:      \033<S-Return>
+!URxvt.keysym.S-space:       \033<S-Space>
+!!URxvt.keysym.M-Up:          \033<M-Up>
+!!URxvt.keysym.M-Down:        \033<M-Down>
+!!URxvt.keysym.M-Left:        \033<M-Left>
+!!URxvt.keysym.M-Right:       \033<M-Right>
+!URxvt.keysym.M-C-Up:          \033<M-C-Up>
+!URxvt.keysym.M-C-Down:        \033<M-C-Down>
+!URxvt.keysym.M-C-Left:        \033<M-C-Left>
+!URxvt.keysym.M-C-Right:       \033<M-C-Right>
+!URxvt.keysym.C-0:         list \033<C- 0123456789 >
+!URxvt.keysym.C-a:         list \033<C- abcdefghijklmnopqrstuvwxyz >
+!URxvt.keysym.M-C-0:         list \033<M-C- 0123456789 >
+!URxvt.keysym.M-C-a:         list \033<M-C- abcdefghijklmnopqrstuvwxyz >
+!URxvt.keysym.F12:           command:\033]701;zh_CN.GBK\007
+!URxvt.keysym.C-0x71: ^q
 
-!! red dark/light
-*color1:                S_red
-*color9:                S_orange
 
-!! green dark/light
-*color2:                S_green
-*color10:               S_base01
 
-!! yellow dark/light
-*color3:                S_yellow
-*color11:               S_base00
+!-----------------------------------------------------------------------------
+! terminal
+!-----------------------------------------------------------------------------
 
-!! blue dark/light
-*color4:                S_blue
-*color12:               S_base0
 
-!! magenta dark/light
-*color5:                S_magenta
-*color13:               S_violet
-
-!! cyan dark/light
-*color6:                S_cyan
-*color14:               S_base1
-
-!! white dark/light
-*color7:                S_base2
-*color15:               S_base3
+! emulate XTerm for proper recognition of key combinations in Vim
+!URxvt.keysym.Up              : \033[A  !breaks arrow keys in Vim
+!URxvt.keysym.Down            : \033[B  !breaks arrow keys in Vim
+!URxvt.keysym.Right           : \033[C  !breaks arrow keys in Vim
+!URxvt.keysym.Left            : \033[D  !breaks arrow keys in Vim
+!URxvt.keysym.Page_Up         : \033[5~ !breaks scrolling in Rxvt
+!URxvt.keysym.Page_Down       : \033[6~ !breaks scrolling in Rxvt
+!URxvt.keysym.Home            : \033[H  !breaks navigation in Vim
+!URxvt.keysym.End             : \033[F  !breaks navigation in Vim
+!URxvt.keysym.S-Up            : \033[1;2A !breaks tabbing in Rxvt
+!URxvt.keysym.S-Down          : \033[1;2B !breaks tabbing in Rxvt
+!URxvt.keysym.S-Right         : \033[1;2C !breaks tabbing in Rxvt
+!URxvt.keysym.S-Left          : \033[1;2D !breaks tabbing in Rxvt
+!URxvt.keysym.S-Page_Up       : captured by terminal for scrolling
+!URxvt.keysym.S-Page_Down     : captured by terminal for scrolling
+URxvt.keysym.S-Home           : \033[1;2H
+URxvt.keysym.S-End            : \033[1;2F
+URxvt.keysym.M-Up             : \033[1;3A
+URxvt.keysym.M-Down           : \033[1;3B
+URxvt.keysym.M-Right          : \033[1;3C
+URxvt.keysym.M-Left           : \033[1;3D
+URxvt.keysym.M-Page_Up        : \033[5;3~
+URxvt.keysym.M-Page_Down      : \033[6;3~
+URxvt.keysym.M-Home           : \033[1;3H
+URxvt.keysym.M-End            : \033[1;3F
+URxvt.keysym.M-S-Up           : \033[1;4A
+URxvt.keysym.M-S-Down         : \033[1;4B
+URxvt.keysym.M-S-Right        : \033[1;4C
+URxvt.keysym.M-S-Left         : \033[1;4D
+!URxvt.keysym.M-S-Page_Up     : captured by terminal for scrolling
+!URxvt.keysym.M-S-Page_Down   : captured by terminal for scrolling
+URxvt.keysym.M-S-Home         : \033[1;4H
+URxvt.keysym.M-S-End          : \033[1;4F
+URxvt.keysym.C-Up             : \033[1;5A
+URxvt.keysym.C-Down           : \033[1;5B
+URxvt.keysym.C-Right          : \033[1;5C
+URxvt.keysym.C-Left           : \033[1;5D
+URxvt.keysym.C-Page_Up        : \033[5;5~
+URxvt.keysym.C-Page_Down      : \033[6;5~
+URxvt.keysym.C-Home           : \033[1;5H
+URxvt.keysym.C-End            : \033[1;5F
+URxvt.keysym.C-S-Up           : \033[1;6A
+URxvt.keysym.C-S-Down         : \033[1;6B
+URxvt.keysym.C-S-Right        : \033[1;6C
+URxvt.keysym.C-S-Left         : \033[1;6D
+!URxvt.keysym.C-S-Page_Up     : captured by terminal for scrolling
+!URxvt.keysym.C-S-Page_Down   : captured by terminal for scrolling
+URxvt.keysym.C-S-Home         : \033[1;6H
+URxvt.keysym.C-S-End          : \033[1;6F
+URxvt.keysym.M-C-Up           : \033[1;7A
+URxvt.keysym.M-C-Down         : \033[1;7B
+URxvt.keysym.M-C-Right        : \033[1;7C
+URxvt.keysym.M-C-Left         : \033[1;7D
+URxvt.keysym.M-C-Page_Up      : \033[5;7~
+URxvt.keysym.M-C-Page_Down    : \033[6;7~
+URxvt.keysym.M-C-Home         : \033[1;7H
+URxvt.keysym.M-C-End          : \033[1;7F
+URxvt.keysym.M-C-S-Up         : \033[1;8A
+URxvt.keysym.M-C-S-Down       : \033[1;8B
+URxvt.keysym.M-C-S-Right      : \033[1;8C
+URxvt.keysym.M-C-S-Left       : \033[1;8D
+!URxvt.keysym.M-C-S-Page_Up   : captured by terminal for scrolling
+!URxvt.keysym.M-C-S-Page_Down : captured by terminal for scrolling
+URxvt.keysym.M-C-S-Home       : \033[1;8H
+URxvt.keysym.M-C-S-End        : \033[1;8F

@@ -5,9 +5,10 @@ Use it if you want, don't if you dont.
 ## Installation
 
 ```bash
-sudo apt-get install vim-gtk ack-grep exuberant-ctags
+sudo apt-get install vim-gtk ack-grep exuberant-ctags rxvt-unicode-256color
 git clone git://github.com/mikesmullin/gvim.git ~/.vim
 ln -s ~/.vim/.vimrc ~/
+ln -s ~/.vim/.Xdefaults ~/
 ln -s ~/.vim/.tmux.conf ~/
 ln -s ~/.vim/.fonts ~/; cd .fonts/; sudo fc-cache -fv; cd ..
 cd ~/.vim
