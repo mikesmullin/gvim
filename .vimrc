@@ -288,4 +288,8 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 "-- easytags
 let g:easytags_updatetime_min = 200
+set tags=./tags
+let g:easytags_dynamic_files = 1
+let g:easytags_by_filetype=./
+let g:easytags_on_cursorhold = 0 " we'll just use my handy hotkey below to do updates manually to avoid interruption
 nnoremap <silent> <F5> <Esc>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
