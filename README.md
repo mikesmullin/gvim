@@ -33,11 +33,7 @@ stty -ixon
 ```bash
 # ~/.profile
 # 256 color support
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-  export TERM='screen-256color'
-else
-  export TERM='screen-color'
-fi
+export TERM="screen-256color"
 ```
 
 
