@@ -176,10 +176,6 @@ map <silent> <C-e> :NERDTreeFind<CR>
 map <silent> <F11> :NERDTreeToggle<CR>
 "let g:NERDTreeKeepTree = 1
 
-"-- Taglist
-let Tlist_GainFocus_On_ToggleOpen = 1
-nnoremap <silent> <F10> :TlistToggle<CR>
-
 "-- Find function
 nmap <F12> :Find
 "---- Find file in current directory and edit it
@@ -279,9 +275,6 @@ autocmd FileType php let b:surround_116 = "<?__('\r')?>"
 "---- Globalization (g11n) -- press cswd
 autocmd FileType php let b:surround_100 = "#{define '\r'}"
 
-"-- Ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-
 "-- ctags
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
@@ -291,3 +284,18 @@ set tags=./tags
 let g:easytags_dynamic_files = 1
 let g:easytags_by_filetype="./"
 let g:easytags_on_cursorhold = 0 " we'll just use my handy hotkey below to do updates manually to avoid interruption
+
+"-- tagbar
+nmap <F1> :TagbarToggle<CR>
+
+"-- whitespace cleanup
+map <silent> <F2> :let _s=@/<Bar>:%s/\t/  /eg<CR>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:echo "cleaned code in ".expand("%")<CR>
+
+"-- ack
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+"---- recursively search cwd
+map <F3> <Esc>:Ack 
+
+"-- easytags
+"---- recursive update cwd
+map <silent> <F4> <Esc>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
