@@ -25,7 +25,7 @@ set ttyscroll=0 " attempt to eliminate visual fragments in gvim large res uber
 set listchars=tab:»\ ,trail:·,extends:>,precedes:<
 set list
 " whitespace cleanup
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\t/  /eg<CR>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\t/  /eg<CR>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:echo "cleaned code in ".expand("%")<CR>
 "BufWritePre :%s/\s\+$//g
 "" syntax highlighting
 au! Syntax gherkin source ~/.vim/bundle/vim-cucumber/syntax/cucumber.vim
@@ -283,10 +283,9 @@ set formatoptions-=cro " disable continuation of comments onto the next line
 "-- Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
-"-- easytags
-set updatetime=4000
-"let g:easytags_autorecurse = 1 " dangerous; fills disk if you go outside project directory
-
 "-- ctags
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+"-- easytags
+let g:easytags_updatetime_min = 200
+nnoremap <silent> <F5> <Esc>:UpdateTags -R %:p:h<CR>:echo "tags updated for ./".expand("%:h")<CR>
