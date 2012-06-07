@@ -15,7 +15,6 @@ set sw=2 ts=2 et " indent with 2 spaces
 set hlsearch " highlight search matches in document
 set incsearch " highlight search matches dynamically as you type them
 set nofoldenable " disable folding; never used
-set formatoptions-=cro " disable continuation of comments onto the next line
 " store vim lockfiles in a centralized directory
 set backupdir=/tmp
 set directory=/tmp
@@ -45,6 +44,7 @@ set guioptions-=Rr " no right scrollbar
 set guioptions-=i  " no icon
 set guioptions-=Ll " no left scrollbar
 set guioptions-=b  " no bottom/horizontal scrollbar
+
 
 "-- tabs like Firefox
 "---- ctrl+t new tab
@@ -211,14 +211,7 @@ function! Find(name)
   execute ":e ".l:line
 endfunction
 command! -nargs=1 Find :call Find("<args>")
-
-"-- Ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-
-"-- easytags
-set updatetime=4000
-let g:easytags_autorecurse = 1
-
+"
 "-- Launch a new Terminal window from CWD
 "command! -nargs=0 Terminal :silent !urxvt &
 command! -nargs=0 Terminal :silent !gnome-terminal &
@@ -284,3 +277,16 @@ command! -nargs=0 Ctags !ctags -R .
 autocmd FileType php let b:surround_116 = "<?__('\r')?>"
 "---- Globalization (g11n) -- press cswd
 autocmd FileType php let b:surround_100 = "#{define '\r'}"
+
+set formatoptions-=cro " disable continuation of comments onto the next line
+
+"-- Ack
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+"-- easytags
+set updatetime=4000
+"let g:easytags_autorecurse = 1 " dangerous; fills disk if you go outside project directory
+
+"-- ctags
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
