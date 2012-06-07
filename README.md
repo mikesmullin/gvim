@@ -8,7 +8,7 @@ Use it if you want, don't if you dont.
 sudo apt-get install vim-gtk ack-grep exuberant-ctags
 git clone git://github.com/mikesmullin/gvim.git ~/.vim
 ln -s ~/.vim/.vimrc ~/
-ln -s ~/.vim/.fonts ~/
+ln -s ~/.vim/.fonts ~/; cd .fonts/; sudo fc-cache -fv; cd ..
 cd ~/.vim
 git submodule update --init --recursive # also run periodically to receive updates
 ```
