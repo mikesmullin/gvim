@@ -212,6 +212,9 @@ function! Find(name)
 endfunction
 command! -nargs=1 Find :call Find("<args>")
 
+"-- Ack
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
 "-- Launch a new Terminal window from CWD
 "command! -nargs=0 Terminal :silent !urxvt &
 command! -nargs=0 Terminal :silent !gnome-terminal &

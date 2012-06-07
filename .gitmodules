@@ -49,9 +49,9 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "bundle/vim-scmdiff"]
-	path = bundle/vim-scmdiff
-	url = git://github.com/ghewgill/vim-scmdiff.git
 [submodule "bundle/vim-xdebug"]
 	path = bundle/vim-xdebug
 	url = git://github.com/ludovicPelle/vim-xdebug.git
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim.git
