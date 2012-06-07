@@ -38,6 +38,12 @@ else
 fi
 ```
 
+```bash
+# disable flow-control so Ctrl+S and Ctrl+Q work in vim
+echo 'stty -ixon' >> ~/.bashrc
+
+```
+
 
 ## Gitting moar VIM plugins
 
