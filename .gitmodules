@@ -46,6 +46,12 @@
 [submodule "bundle/vim-vividchalk"]
 	path = bundle/vim-vividchalk
 	url = git://github.com/tpope/vim-vividchalk.git
-[submodule "bundle/DBGp-Remote-Debugger-Interface"]
-	path = bundle/DBGp-Remote-Debugger-Interface
-	url = git://github.com/vim-scripts/DBGp-Remote-Debugger-Interface.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "bundle/vim-scmdiff"]
+	path = bundle/vim-scmdiff
+	url = git://github.com/ghewgill/vim-scmdiff.git
+[submodule "bundle/vim-xdebug"]
+	path = bundle/vim-xdebug
+	url = git://github.com/ludovicPelle/vim-xdebug.git
