@@ -67,3 +67,12 @@
 [submodule "bundle/gnupg.vim"]
 	path = bundle/gnupg.vim
 	url = git://github.com/vim-scripts/gnupg.vim.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = git://github.com/benmills/vimux.git
+[submodule "bundle/vimux-ruby-test"]
+	path = bundle/vimux-ruby-test
+	url = git://github.com/pgr0ss/vimux-ruby-test.git
+[submodule "bundle/csapprox"]
+	path = bundle/csapprox
+	url = git://github.com/godlygeek/csapprox.git

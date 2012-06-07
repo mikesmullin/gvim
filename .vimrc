@@ -31,10 +31,15 @@ au Bufread,BufNewFile *.feature set filetype=gherkin
 au Bufread,BufNewFile *.scss set filetype=sass
 au Bufread,BufNewFile *.hamstache set filetype=haml
 "syntax on " for some reason this breaks Gherkin
+" enable 256 color for themes to look good in tmux
+set t_Co=256
 
 " gvim like vim
 set guitablabel=%t " prefer file basenames only
 colorscheme darkspectrum " best looking imho
+colorscheme darkspectrum " best looking imho
+"colorscheme gummybears
+"colorscheme vividchalk
 set guioptions+=LlRrbmTi " quirky requirement
 set guioptions-=m  " no file menu bar
 set guioptions-=T  " no toolbar
@@ -283,3 +288,43 @@ endfunc
 
 autocmd FileType * map <silent> <F2> :call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>
 autocmd FileType php map <silent> <F2> :call CleanPHP()<CR>:call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>
+
+
+"-- vimux
+" Prompt for a command to run
+map rp :PromptVimTmuxCommand<CR>
+
+" Prompt for a command to run
+map rb :PromptVimTmuxCommand<CR>bash<CR>
+
+" Run last command executed by RunVimTmuxCommand
+map rl :RunLastVimTmuxCommand<CR>
+
+" Inspect runner pane
+map ri :InspectVimTmuxRunner<CR>
+
+" Close all other tmux panes in current window
+map rx :CloseVimTmuxPanes<CR>
+
+" Interrupt any command running in the runner pane
+map rs :InterruptVimTmuxRunner<CR>
+
+" force write as root using sudo (for when you get read-only)
+cmap w!! %!sudo tee > /dev/null %
+
+"-- vimux-ruby-debug
+map <silent> <LocalLeader>rb :wa<CR> :RunAllRubyTests<CR>
+map <silent> <LocalLeader>rc :wa<CR> :RunRubyFocusedContext<CR>
+map <silent> <LocalLeader>rf :wa<CR> :RunRubyFocusedTest<CR>
+map <silent> <LocalLeader>rl :wa<CR> :RunLastVimTmuxCommand<CR>
+map <silent> <LocalLeader>rx :wa<CR> :CloseVimTmuxPanes<CR>
+map <silent> <LocalLeader>ri :wa<CR> :InspectVimTmuxRunner<CR>
+map <silent> <LocalLeader>rs :!ruby -c %<CR>
+
+map <silent> <LocalLeader>sa :wa<CR> :InferiorSlimeSpecAll<CR>
+map <silent> <LocalLeader>sb :wa<CR> :InferiorSlimeSpecFile<CR>
+map <silent> <LocalLeader>sf :wa<CR> :InferiorSlimeSpecLine<CR>
+map <silent> <LocalLeader>sr :wa<CR> :InferiorSlimeRestart<CR>
+
+map <LocalLeader>rd Orequire 'ruby-debug';debugger<ESC>
+setlocal isk+=?

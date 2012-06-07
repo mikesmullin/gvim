@@ -13,6 +13,30 @@ cd ~/.vim
 git submodule update --init --recursive # also run periodically to receive updates
 ```
 
+```bash
+# ~/.tmux.conf
+# 256 color support
+set -g default-terminal "screen-256color"
+```
+
+```bash
+# ~/.bashrc
+# 256 color support
+export TERM="xterm-256color"
+alias tmux="tmux -2"
+```
+
+```bash
+# ~/.profile
+# 256 color support
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+  export TERM='xterm-256color'
+else
+  export TERM='xterm-color'
+fi
+```
+
+
 ## Gitting moar VIM plugins
 
 ```bash
