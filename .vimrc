@@ -281,4 +281,4 @@ func! CleanPHP()
 endfunc
 
 autocmd FileType * map <silent> <F2> :call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>
-autocmd FileType php map <silent> <F2> :call ParsePHP()<CR>:call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>
+autocmd FileType php map <silent> <F2> :call CleanPHP()<CR>:call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>
