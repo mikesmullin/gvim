@@ -24,8 +24,6 @@ set ttyscroll=0 " attempt to eliminate visual fragments in gvim large res uber
 " show whitespace chars
 set listchars=tab:»\ ,trail:·,extends:>,precedes:<
 set list
-" whitespace cleanup
-nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\t/  /eg<CR>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:echo "cleaned code in ".expand("%")<CR>
 "BufWritePre :%s/\s\+$//g
 "" syntax highlighting
 au! Syntax gherkin source ~/.vim/bundle/vim-cucumber/syntax/cucumber.vim
@@ -153,11 +151,14 @@ nmap <C-y> <C-r>
 imap <C-y> <Esc><C-r>i
 vmap <C-y> <Esc><C-r>
 "---- ctrl+f find
-map <C-f> <Esc>/
+"map <C-f> <Esc>/
+map <C-f> <Esc>:promptfind<CR>
 "---- ctrl+h regex find/replace
-map <C-h> <Esc>:%s///g<Left><Left><Left>
+"map <C-h> <Esc>:%s///g<Left><Left><Left>
+map <C-h> <Esc>:promptrepl<CR>
 "---- f3 find next
-map <F3> <Esc>/<CR>
+"map <F3> <Esc>/<CR>
+map <F3> <Esc>:Ack 
 "---- alt+d delete whitespace multi-line
 map <M-d> <Esc>i<Right><Space><Esc>d/\S<CR>:noh<CR>i<Space><Esc>
 
@@ -278,8 +279,6 @@ autocmd FileType php let b:surround_116 = "<?__('\r')?>"
 "---- Globalization (g11n) -- press cswd
 autocmd FileType php let b:surround_100 = "#{define '\r'}"
 
-set formatoptions-=cro " disable continuation of comments onto the next line
-
 "-- Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
@@ -290,6 +289,5 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 let g:easytags_updatetime_min = 200
 set tags=./tags
 let g:easytags_dynamic_files = 1
-let g:easytags_by_filetype=./
+let g:easytags_by_filetype="./"
 let g:easytags_on_cursorhold = 0 " we'll just use my handy hotkey below to do updates manually to avoid interruption
-nnoremap <silent> <F5> <Esc>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
