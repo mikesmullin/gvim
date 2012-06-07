@@ -55,3 +55,9 @@
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = git://github.com/mileszs/ack.vim.git
+[submodule "bundle/vim-scmdiff"]
+	path = bundle/vim-scmdiff
+	url = git://github.com/mikesmullin/vim-scmdiff.git
+[submodule "bundle/vim-easytags"]
+	path = bundle/vim-easytags
+	url = git://github.com/xolox/vim-easytags.git

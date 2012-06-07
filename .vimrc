@@ -48,7 +48,7 @@ set guioptions-=b  " no bottom/horizontal scrollbar
 
 "-- tabs like Firefox
 "---- ctrl+t new tab
-nnoremap <C-t> :tabnew<CR>
+"nnoremap <C-t> :tabnew<CR> " conflicts with ctags
 "---- ctrl+tab next tab
 nmap <C-Tab> :tabn<CR>
 imap <C-Tab> <Esc><C-Tab>i
@@ -214,6 +214,10 @@ command! -nargs=1 Find :call Find("<args>")
 
 "-- Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+"-- easytags
+set updatetime=4000
+let g:easytags_autorecurse = 1
 
 "-- Launch a new Terminal window from CWD
 "command! -nargs=0 Terminal :silent !urxvt &
