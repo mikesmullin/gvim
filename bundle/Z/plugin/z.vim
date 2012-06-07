@@ -1,24 +1,4 @@
-" things that need to run last after all plugins
-set formatoptions-=cro " disable continuation of comments onto the next line
-
 " vim-xdebug overrides
-"
-"
-"
-if !exists('g:debuggerRunning')
-  let g:debuggerRunning = 0
-endif
-
-function! ToggleDebugger()
-if (g:debuggerRunning == 0)
-  exec(":python debugger_run()")
-  let g:debuggerRunning=1
-else
-  exec(":python debugger_quit()")
-  let g:debuggerRunning=0
-endif
-endfunction
-
 map <F5> :call ToggleDebugger()
 
 " ack recursively search cwd
