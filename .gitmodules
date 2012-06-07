@@ -55,3 +55,6 @@
 [submodule "bundle/vim-easytags"]
 	path = bundle/vim-easytags
 	url = git://github.com/xolox/vim-easytags.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
