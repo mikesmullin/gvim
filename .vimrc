@@ -360,6 +360,7 @@ vmap 
 
 func! ResetPullVimRC()
   :exe "!cd ~/.vim; git reset --hard HEAD; git pull"
+  :so ~/.vimrc
 endfunc
 
 func! SaveVimRC()
