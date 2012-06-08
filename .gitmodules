@@ -73,6 +73,3 @@
 [submodule "bundle/csapprox"]
 	path = bundle/csapprox
 	url = git://github.com/godlygeek/csapprox.git
-[submodule "bundle/vimux"]
-	path = bundle/vimux
-	url = git@github.com:mikesmullin/vimux.git
