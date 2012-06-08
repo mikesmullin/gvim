@@ -352,8 +352,8 @@ map [1;5B j
 imap [1;5B <Esc>ji
 imap [1;5A <Esc>ki
 
-func! SyncVimRC()
-  :exe "!cd ~/.vim; git pull"
+func! ResetPullVimRC()
+  :exe "!cd ~/.vim; git reset --hard HEAD; git pull"
 endfunc
 
 func! SaveVimRC()
