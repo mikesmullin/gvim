@@ -368,3 +368,7 @@ func! SaveVimRC()
   :so %
   !cd ~/.vim; git shove 'snapshot'
 endfunc
+
+" TODO
+" on save, cleanup whitespace and beautify php
+" on load, by filetype, set indentation rules
