@@ -347,10 +347,6 @@ vmap OH 0
 vmap OF $
 cmap OH <Home>
 cmap OF <End>
-map [1;3A <M-Up>
-map [1;3B <M-Down>
-imap [1;3A <Esc><M-Up>i
-imap [1;3B <Esc><M-Down>i
 map [1;5C e
 map [1;5D b
 imap [1;5C <Esc>lei
@@ -359,10 +355,6 @@ map [1;5A k
 map [1;5B j
 imap [1;5B <Esc>ji
 imap [1;5A <Esc>ki
-map [1;3C <Esc><Right>
-map [1;3D <Esc><Left>
-map [1;3A <Esc><Up>
-map [1;3B <Esc><Down>
 
 func! ResetPullVimRC()
   :exe "!cd ~/.vim; git reset --hard HEAD; git pull"
