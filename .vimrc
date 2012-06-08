@@ -356,7 +356,6 @@ map [1;3C <Esc><Right>
 map [1;3D <Esc><Left>
 map [1;3A <Esc><Up>
 map [1;3B <Esc><Down>
-vmap 
 
 func! ResetPullVimRC()
   :exe "!cd ~/.vim; git reset --hard HEAD; git pull"
