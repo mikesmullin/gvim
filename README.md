@@ -14,7 +14,7 @@ ln -s ~/.vim/.tmux.conf ~/
 ln -s ~/.vim/.fonts ~/; cd .fonts/; sudo fc-cache -fv; cd ..
 cd ~/.vim
 git submodule update --init --recursive # also run periodically to receive updates
-pear install PHP_Beautifier # should append version number
+sudo pear install PHP_Beautifier # should append version number
 ```
 
 ```bash
