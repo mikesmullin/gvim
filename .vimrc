@@ -353,6 +353,8 @@ imap [1;5B <Esc>ji
 imap [1;5A <Esc>ki
 map [1;3C <Esc><Right>
 map [1;3D <Esc><Left>
+map [1;3A <Esc><Up>
+map [1;3B <Esc><Down>
 
 func! ResetPullVimRC()
   :exe "!cd ~/.vim; git reset --hard HEAD; git pull"
