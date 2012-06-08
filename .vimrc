@@ -331,13 +331,13 @@ map [1;7A <C-M-Up>
 map [1;7B <C-M-Down>
 imap [1;7A <Esc><C-M-Up>i
 imap [1;7B <Esc><C-M-Down>i
-nmap OF $
-nmap OH 0
-vmap OF $
-vmap OH 0
-imap OH <Esc>0i
-cmap OH <Home>
+imap OH <Esc>0li
 imap OF <Esc>$i
+nmap OH 0
+nmap OF $
+vmap OH 0
+vmap OF $
+cmap OH <Home>
 cmap OF <End>
 map [1;3A <M-Up>
 map [1;3B <M-Down>
@@ -354,4 +354,10 @@ imap [1;5A <Esc>ki
 
 func! SyncVimRC()
   :exe "!cd ~/.vim; git pull"
+endfunc
+
+func! SaveVimRC()
+  :w
+  :so %
+  !cd ~/.vim; git shove 'snapshot'
 endfunc
