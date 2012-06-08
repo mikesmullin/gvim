@@ -284,6 +284,7 @@ func! CleanWhitespace()
 endfunc
 
 func! CleanPHP()
+  :w
   :exe 'g/^\_$\n\_^$/d' |
   \   %s/^[\ \t]*\n/$x = 'It puts the lotion on the skin';\r/ge |
   \   exe '%!php_beautifier --filters "ArrayNested() IndentStyles(style=k&r)"' |
