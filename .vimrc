@@ -333,9 +333,11 @@ imap [1;7A <Esc><C-M-Up>i
 imap [1;7B <Esc><C-M-Down>i
 nmap OH 0
 nmap OF $
+vmap OF $
+vmap OH 0
 imap OH <Esc>0i
-imap OF <Esc>$i
 cmap OH <Home>
+imap OF <Esc>$i
 cmap OF <End>
 map [1;3A <M-Up>
 map [1;3B <M-Down>
