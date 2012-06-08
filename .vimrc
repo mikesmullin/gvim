@@ -76,13 +76,13 @@ imap <C-M-Down> <Esc>yypi
 vmap <C-M-Down> y'>pV'[']
 nmap <C-M-Down> yyp
 "---- alt+up move block up
-nnoremap <M-Up> :m-2<CR>
-inoremap <M-Up> <Esc>:m-2<CR>gi
-vnoremap <M-Up> :m-2<CR>gv
+nmap <M-Up> :m-2<CR>
+imap <M-Up> <Esc>:m-2<CR>gi
+vmap <M-Up> :m-2<CR>gv
 "---- alt+down move block down
-nnoremap <M-Down> :m+<CR>
-inoremap <M-Down> <Esc>:m+<CR>gi
-vnoremap <M-Down> :m'>+<CR>gv
+nmap <M-Down> :m+<CR>
+imap <M-Down> <Esc>:m+<CR>gi
+vmap <M-Down> :m'>+<CR>gv
 "---- ctrl+d delete a line (without yanking)
 nmap <C-d> "_dd
 imap <C-d> <Esc><C-d>i
