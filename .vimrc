@@ -331,8 +331,8 @@ map [1;7A <C-M-Up>
 map [1;7B <C-M-Down>
 imap [1;7A <Esc><C-M-Up>i
 imap [1;7B <Esc><C-M-Down>i
-nmap OH 0
 nmap OF $
+nmap OH 0
 vmap OF $
 vmap OH 0
 imap OH <Esc>0i
@@ -351,3 +351,7 @@ map [1;5A k
 map [1;5B j
 imap [1;5B <Esc>ji
 imap [1;5A <Esc>ki
+
+func! SyncVimRC()
+  :exe "!cd ~/.vim; git pull"
+endfunc
