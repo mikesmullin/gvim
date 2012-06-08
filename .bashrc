@@ -112,6 +112,6 @@ export TERM="screen-256color"
 alias tmux="tmux -2"
 stty -ixon # disable flow-control so Ctrl+S and Ctrl+Q work in vim
 
-if [ -f ~/.bash_custom ]; then
-    . ~/.bash_custom
+if [ -f ~/.bashrc_custom ]; then
+    . ~/.bashrc_custom
 fi
