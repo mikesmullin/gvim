@@ -6,7 +6,7 @@ filetype plugin on
 set nu " line numbers on
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 let g:Powerline_symbols = 'fancy'
-"set paste " i like being able to paste most of the time
+set paste " i like being able to paste most of the time
 set nowrap " wrapping off
 set nocp " not sure how this got here ???
 set autoindent " try to preserve indentation for new lines
