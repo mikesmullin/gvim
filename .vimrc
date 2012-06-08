@@ -14,6 +14,7 @@ set sw=2 ts=2 et " indent with 2 spaces
 set hlsearch " highlight search matches in document
 set incsearch " highlight search matches dynamically as you type them
 set nofoldenable " disable folding; never used
+set tw=0 " don't auto-insert linebreaks to wrap
 " store vim lockfiles in a centralized directory
 set backupdir=/tmp
 set directory=/tmp
@@ -270,7 +271,7 @@ map <F3> <Esc>:Ack
 "-- easytags
 "---- recursive update cwd
 "map <silent> <F4> <Esc>:call mkdir(expand("%:p:h").'/.tags/')<CR>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
-map <silent> <F4> <Esc>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
+map <silent> <F4> <Esc>:echo "generating tags for ".expand("%:p:h")."...please wait..."<CR>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
 
 "code beautification
 "--php
@@ -355,6 +356,7 @@ map [1;3C <Esc><Right>
 map [1;3D <Esc><Left>
 map [1;3A <Esc><Up>
 map [1;3B <Esc><Down>
+vmap  
 
 func! ResetPullVimRC()
   :exe "!cd ~/.vim; git reset --hard HEAD; git pull"
