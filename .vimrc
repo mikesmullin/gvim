@@ -6,7 +6,6 @@ filetype plugin on
 set nu " line numbers on
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 let g:Powerline_symbols = 'fancy'
-set paste " i like being able to paste most of the time
 set nowrap " wrapping off
 set nocp " not sure how this got here ???
 set autoindent " try to preserve indentation for new lines
@@ -330,11 +329,23 @@ setlocal isk+=?
 "-- terminal key translations
 map [1;7A <C-M-Up>
 map [1;7B <C-M-Down>
-noremap OH <Home>
-inoremap OH <Home>
-noremap OF <End>
-inoremap OF <End>
+imap [1;7A <Esc><C-M-Up>i
+imap [1;7B <Esc><C-M-Down>i
+nmap OH 0
+nmap OF $
+imap OH <Esc>0i
+imap OF <Esc>$i
+cmap OH <Home>
+cmap OF <End>
 map [1;3A <M-Up>
 map [1;3B <M-Down>
-inoremap <C-Home> gg
-inoremap <C-End> G
+imap [1;3A <Esc><M-Up>i
+imap [1;3B <Esc><M-Down>i
+map [1;5C e
+map [1;5D b
+imap [1;5C <Esc>lei
+imap [1;5D <Esc>bi
+map [1;5A k
+map [1;5B j
+imap [1;5B <Esc>ji
+imap [1;5A <Esc>ki
