@@ -271,7 +271,7 @@ map <F3> <Esc>:Ack
 "-- easytags
 "---- recursive update cwd
 "map <silent> <F4> <Esc>:call mkdir(expand("%:p:h").'/.tags/')<CR>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
-map <silent> <F4> <Esc>:echo "generating tags for ".expand("%:p:h")."...please wait..."<CR>:sleep 1<CR>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
+map <silent> <F4> <Esc>:call confirm("Are you sure you want to regenerate tags for ".expand("%:p:h")."?", "&Yes\n&No")<CR>:echo "generating tags for ".expand("%:p:h")."...please wait..."<CR>:sleep 1<CR>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
 
 "code beautification
 "--php
