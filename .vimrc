@@ -167,7 +167,7 @@ map <C-f> <Esc>:promptfind<CR>
 map <C-h> <Esc>:promptrepl<CR>
 "---- f3 find next
 "map <F3> <Esc>/<CR>
-map <F3> <Esc>:Ack 
+map <F3> <Esc>:Ack
 "---- alt+d delete whitespace multi-line
 map <M-d> <Esc>i<Right><Space><Esc>d/\S<CR>:noh<CR>i<Space><Esc>
 
@@ -266,12 +266,12 @@ nmap <F1> :TagbarToggle<CR>
 "-- ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 "---- recursively search cwd
-map <F3> <Esc>:Ack 
+map <F3> <Esc>:Ack
 
 "-- easytags
 "---- recursive update cwd
 "map <silent> <F4> <Esc>:call mkdir(expand("%:p:h").'/.tags/')<CR>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
-map <silent> <F4> <Esc>:call confirm("Are you sure you want to regenerate tags for ".expand("%:p:h")."?", "&Yes\n&No")<CR>:echo "generating tags for ".expand("%:p:h")."...please wait..."<CR>:sleep 1<CR>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>
+map <silent> <F4> <Esc>:let choice = confirm("Are you sure you want to regenerate tags for ".expand("%:p:h")."?", "&Yes\n&No")<CR>:if choice == 1<CR>:echo "generating tags for ".expand("%:p:h")."...please wait..."<CR>:sleep 1<CR>:UpdateTags -R %:p:h<CR>:echo "tags updated for ".expand("%:p:h")<CR>:endif<CR>
 
 "code beautification
 "--php
@@ -290,8 +290,8 @@ func! CleanPHP()
   \   %s/$x = 'It puts the lotion on the skin';//ge
 endfunc
 
-autocmd FileType * map <silent> <F2> :call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>
-autocmd FileType php map <silent> <F2> :call CleanPHP()<CR>:call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>
+autocmd FileType * map <silent> <F2> :let choice = confirm("Are you sure you want to clean file ".expand("%")."?", "&Yes\n&No")<CR>:if choice == 1<CR>:call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>:endif<CR>
+autocmd FileType php map <silent> <F2> :let choice = confirm("Are you sure you want to clean file ".expand("%")."?", "&Yes\n&No")<CR>:if choice == 1<CR>:call CleanPHP()<CR>:call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>:endif<CR>
 
 
 "-- vimux
@@ -356,7 +356,7 @@ map [1;3C <Esc><Right>
 map [1;3D <Esc><Left>
 map [1;3A <Esc><Up>
 map [1;3B <Esc><Down>
-vmap  
+vmap 
 
 func! ResetPullVimRC()
   :exe "!cd ~/.vim; git reset --hard HEAD; git pull"
