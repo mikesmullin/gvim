@@ -330,7 +330,11 @@ setlocal isk+=?
 "-- terminal key translations
 map [1;7A <C-M-Up>
 map [1;7B <C-M-Down>
-"map OH <Home>
-"map OF <End>
+noremap OH <Home>
+inoremap OH <Home>
+noremap OF <End>
+inoremap OF <End>
 map [1;3A <M-Up>
 map [1;3B <M-Down>
+inoremap <C-Home> gg
+inoremap <C-End> G
