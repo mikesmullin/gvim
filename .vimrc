@@ -340,7 +340,7 @@ map [1;7B <C-M-Down>
 imap [1;7A <Esc><C-M-Up>i
 imap [1;7B <Esc><C-M-Down>i
 imap OH <Esc>0li
-imap OF <Esc>$li
+imap OF <Esc>$i<Right>
 nmap OH 0
 nmap OF $
 vmap OH 0
