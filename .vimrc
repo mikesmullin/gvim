@@ -199,7 +199,7 @@ command! -nargs=0 Terminal :silent !gnome-terminal &
 command! -nargs=0 Nautilus :silent !nautilus &
 
 " force write as root using sudo (for when you get read-only)
-command! -nargs=0 w!! :silent %!sudo tee > /dev/null %
+cmap w!! %!sudo tee > /dev/null %
 
 "-- Run current script in a new vim split window horizontal
 function! RunCmd(cmd)
