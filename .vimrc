@@ -198,6 +198,8 @@ command! -nargs=0 Terminal :silent !gnome-terminal &
 "command! -nargs=0 Nautilus :silent !urxvt &
 command! -nargs=0 Nautilus :silent !nautilus %:p:h 2>&1 1>/dev/null &
 
+command! -nargs=0 html2haml :silent %!html2haml -s
+
 " force write as root using sudo (for when you get read-only)
 cmap w!! %!sudo tee > /dev/null %
 
@@ -307,7 +309,6 @@ endfunc
 autocmd FileType * map <silent> <F2> :let choice = confirm("Are you sure you want to clean file ".expand("%")."?", "&Yes\n&No")<CR>:if choice == 1<CR>:call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>:endif<CR>
 autocmd FileType php map <silent> <F2> :let choice = confirm("Are you sure you want to clean file ".expand("%")."?", "&Yes\n&No")<CR>:if choice == 1<CR>:call CleanPHP()<CR>:call CleanWhitespace()<CR>:echo "cleaned code in ".expand("%")<CR>:endif<CR>
 
-
 "-- vimux
 " Prompt for a command to run
 map <silent> <LocalLeader>rp :PromptVimTmuxCommand<CR>
@@ -371,14 +372,6 @@ func! SaveVimRC()
   :so %
   !cd ~/.vim; git shove 'snapshot'
 endfunc
-
-" Sudo write
-cmap w!! :SUwrite
-if executable('sudo') && executable('tee')
-  command! SUwrite
-    \ execute 'w !sudo tee % > /dev/null' |
-    \ setlocal nomodified
-endif
 
 " TODO
 " on save, cleanup whitespace and beautify php
