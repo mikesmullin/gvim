@@ -198,7 +198,7 @@ command! -nargs=0 Terminal :silent !gnome-terminal &
 "command! -nargs=0 Nautilus :silent !urxvt &
 command! -nargs=0 Nautilus :silent !nautilus %:p:h 2>&1 1>/dev/null &
 
-command! -nargs=0 html2haml :silent %!html2haml -s
+command! -nargs=0 Html2Haml :silent %!html2haml -s
 
 " force write as root using sudo (for when you get read-only)
 cmap w!! %!sudo tee > /dev/null %
