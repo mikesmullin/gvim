@@ -194,6 +194,13 @@ map <silent> <C-e> :NERDTreeFind<CR>
 "command! -nargs=0 Terminal :silent !urxvt &
 command! -nargs=0 Terminal :silent !gnome-terminal &
 
+"-- Launch a new Nautilus window from CWD
+"command! -nargs=0 Nautilus :silent !urxvt &
+command! -nargs=0 Nautilus :silent !nautilus &
+
+" force write as root using sudo (for when you get read-only)
+command! -nargs=0 w!! :silent %!sudo tee > /dev/null %
+
 "-- Run current script in a new vim split window horizontal
 function! RunCmd(cmd)
   let fn = expand("%:p")
@@ -314,8 +321,6 @@ map <silent> <LocalLeader>ri :InspectVimTmuxRunner<CR>
 map <silent> <LocalLeader>rx :CloseVimTmuxPanes<CR>
 " Interrupt any command running in the runner pane
 map <silent> <LocalLeader>rs :InterruptVimTmuxRunner<CR>
-" force write as root using sudo (for when you get read-only)
-cmap w!! %!sudo tee > /dev/null %
 
 "-- vimux-ruby-debug
 map <silent> <LocalLeader>rb :wa<CR> :RunAllRubyTests<CR>
