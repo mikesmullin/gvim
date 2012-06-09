@@ -196,7 +196,7 @@ command! -nargs=0 Terminal :silent !gnome-terminal &
 
 "-- Launch a new Nautilus window from CWD
 "command! -nargs=0 Nautilus :silent !urxvt &
-command! -nargs=0 Nautilus :silent !nautilus &
+command! -nargs=0 Nautilus :silent !nautilus %:p:h 2>&1 1>/dev/null &
 
 " force write as root using sudo (for when you get read-only)
 cmap w!! %!sudo tee > /dev/null %
