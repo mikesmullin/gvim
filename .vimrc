@@ -367,6 +367,14 @@ func! SaveVimRC()
   !cd ~/.vim; git shove 'snapshot'
 endfunc
 
+" Sudo write
+cmap w!! :SUwrite
+if executable('sudo') && executable('tee')
+  command! SUwrite
+    \ execute 'w !sudo tee % > /dev/null' |
+    \ setlocal nomodified
+endif
+
 " TODO
 " on save, cleanup whitespace and beautify php
 " on load, by filetype, set indentation rules
