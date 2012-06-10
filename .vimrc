@@ -198,7 +198,11 @@ command! -nargs=0 Terminal :silent !gnome-terminal &
 "command! -nargs=0 Nautilus :silent !urxvt &
 command! -nargs=0 Nautilus :silent !nautilus %:p:h 2>&1 1>/dev/null &
 
+"-- Convert current buffer from HTML to HAML
 command! -nargs=0 Html2Haml :silent %!html2haml -s
+
+"-- Convert current buffer from CSS to SASS
+command! -nargs=0 Css2Sass :silent %!sass-convert --from css --to sass -s
 
 " force write as root using sudo (for when you get read-only)
 cmap w!! %!sudo tee > /dev/null %
