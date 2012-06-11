@@ -41,7 +41,7 @@ colorscheme darkspectrum " best looking imho
 "colorscheme gummybears
 "colorscheme vividchalk
 set guioptions+=LlRrbmTi " quirky requirement
-set guioptions-=m  " no file menu bar
+"set guioptions-=m  " no file menu bar
 set guioptions-=T  " no toolbar
 set guioptions-=Rr " no right scrollbar
 set guioptions-=i  " no icon
