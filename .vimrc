@@ -4,7 +4,7 @@ call pathogen#infect()
 filetype plugin on
 "filetype plugin indent on " I don't like auto-indent
 set nu " line numbers on
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+set guifont=Monaco\ for\ Powerline\ 12
 let g:Powerline_symbols = 'fancy'
 set nowrap " wrapping off
 set nocp " not sure how this got here ???
@@ -306,7 +306,7 @@ func! CleanPHP()
   :w
   :exe 'g/^\_$\n\_^$/d' |
   \   %s/^[\ \t]*\n/$x = 'It puts the lotion on the skin';\r/ge |
-  \   exe '%!php_beautifier --filters "ArrayNested() IndentStyles(style=k&r)"' |
+  \   exe '%!php_beautifier -s2 --filters "ArrayNested() IndentStyles(style=k&r)"' |
   \   %s/$x = 'It puts the lotion on the skin';//ge
 endfunc
 
