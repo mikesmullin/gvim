@@ -169,7 +169,7 @@ vmap <C-y> <Esc><C-r>
 map <C-f> <Esc>/
 "map <C-f> <Esc>:promptfind<CR>
 "---- ctrl+h regex find/replace
-map <C-h> <Esc>:%s///g<Left><Left><Left>
+map <C-h> <Esc>:%s!!!g<Left><Left><Left>
 "map <C-h> <Esc>:promptrepl<CR>
 "---- f3 find next
 "map <F3> <Esc>/<CR>
