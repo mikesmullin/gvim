@@ -115,3 +115,5 @@ stty -ixon # disable flow-control so Ctrl+S and Ctrl+Q work in vim
 if [ -f ~/.bashrc_custom ]; then
     . ~/.bashrc_custom
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
