@@ -166,14 +166,14 @@ nmap <C-y> <C-r>
 imap <C-y> <Esc><C-r>i
 vmap <C-y> <Esc><C-r>
 "---- ctrl+f find
-"map <C-f> <Esc>/
-map <C-f> <Esc>:promptfind<CR>
+map <C-f> <Esc>/
+"map <C-f> <Esc>:promptfind<CR>
 "---- ctrl+h regex find/replace
-"map <C-h> <Esc>:%s///g<Left><Left><Left>
-map <C-h> <Esc>:promptrepl<CR>
+map <C-h> <Esc>:%s///g<Left><Left><Left>
+"map <C-h> <Esc>:promptrepl<CR>
 "---- f3 find next
 "map <F3> <Esc>/<CR>
-map <F3> <Esc>:Ack
+map <F3> <Esc>:Ack 
 "---- alt+d delete whitespace multi-line
 map <M-d> <Esc>i<Right><Space><Esc>d/\S<CR>:noh<CR>i<Space><Esc>
 
