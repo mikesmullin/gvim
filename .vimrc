@@ -255,7 +255,7 @@ function! MaximizeToggle()
   endif
 endfunction
 
-"-- alternave way to toggle max/min using tabs
+"-- alternative way to toggle max/min using tabs
 nmap t% :tabedit %<CR>
 nmap td :tabclose<CR>
 
@@ -378,6 +378,7 @@ func! SaveVimRC()
 endfunc
 
 " enable spell checking
+" use zg to add word under cursor to dictionary
 " e.g. the humpster
 set spell
 set spelllang=en_us
