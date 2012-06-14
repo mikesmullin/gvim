@@ -264,3 +264,6 @@ bashrc
 usr
 chroot
 grep
+omniauth
+uid
+username
