@@ -1,4 +1,4 @@
-" vim plugin manager configuration
+udo -i vim plugin manager configuration
 call pathogen#infect()
 " vim configuration
 filetype plugin on
@@ -376,6 +376,18 @@ func! SaveVimRC()
   :so %
   !cd ~/.vim; git shove 'snapshot'
 endfunc
+
+" enable spell checking
+" e.g. the humpster
+set spell
+set spelllang=en_us
+hi SpellBad cterm=undercurl ctermbg=NONE ctermfg=red guisp=red
+" -- noun that should be proper-cased
+hi SpellCap cterm=undercurl ctermbg=NONE ctermfg=red guisp=red
+" -- proper spelling of word, but not in this region
+hi SpellLocal cterm=undercurl ctermbg=NONE ctermfg=red guisp=red
+" -- words uncommonly used
+hi SpellRare cterm=undercurl ctermbg=NONE ctermfg=red guisp=red
 
 " TODO
 " on save, cleanup whitespace and beautify php
