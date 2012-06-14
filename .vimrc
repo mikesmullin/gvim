@@ -4,7 +4,7 @@ call pathogen#infect()
 filetype plugin on
 "filetype plugin indent on " I don't like auto-indent
 set nu " line numbers on
-set guifont=Monaco\ for\ Powerline\ 12
+set guifont=Monaco\ for\ Powerline\ 10
 let g:Powerline_symbols = 'fancy'
 set nowrap " wrapping off
 set nocp " not sure how this got here ???
