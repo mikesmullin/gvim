@@ -370,14 +370,14 @@ func! FResetPullVimRC()
   :exe "!cd ~/.vim; git reset --hard HEAD; git pull; git submodule update --init --recursive"
   :so ~/.vimrc
 endfunc
-command! ResetPullVimRC :silent call FResetPullVimRC()
+command! ResetPullVimRC call FResetPullVimRC()
 
 func! FSaveVimRC()
   :w
   :so %
   !cd ~/.vim; git shove 'snapshot'
 endfunc
-command! SaveVimRc :silent call FSaveVimRC()
+command! SaveVimRc call FSaveVimRC()
 
 " enable spell checking
 " use zg to add word under cursor to dictionary
