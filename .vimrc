@@ -366,16 +366,18 @@ map [1;5B j
 imap [1;5B <Esc>ji
 imap [1;5A <Esc>ki
 
-func! ResetPullVimRC()
-  :exe "!cd ~/.vim; git reset --hard HEAD; git pull"
+func! FResetPullVimRC()
+  :exe "!cd ~/.vim; git reset --hard HEAD; git pull; git submodule update --init --recursive"
   :so ~/.vimrc
 endfunc
+command! ResetPullVimRC :silent call FResetPullVimRC()
 
-func! SaveVimRC()
+func! FSaveVimRC()
   :w
   :so %
   !cd ~/.vim; git shove 'snapshot'
 endfunc
+command! SaveVimRc :silent call FSaveVimRC()
 
 " enable spell checking
 " use zg to add word under cursor to dictionary
