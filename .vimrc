@@ -385,8 +385,8 @@ command! SaveVimRc call FSaveVimRC()
 set spell
 set spelllang=en_us
 hi SpellBad cterm=undercurl ctermbg=NONE ctermfg=red guisp=red
-" -- noun that should be proper-cased
-hi SpellCap cterm=undercurl ctermbg=NONE ctermfg=red guisp=red
+" -- noun that should be proper-cased; ignore these
+hi SpellCap cterm=NONE ctermbg=NONE ctermfg=NONE guisp=NONE
 " -- proper spelling of word, but not in this region
 hi SpellLocal cterm=undercurl ctermbg=NONE ctermfg=red guisp=red
 " -- words uncommonly used
