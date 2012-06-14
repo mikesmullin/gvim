@@ -1,4 +1,4 @@
-udo -i vim plugin manager configuration
+" vim plugin manager configuration
 call pathogen#infect()
 " vim configuration
 filetype plugin on
