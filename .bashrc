@@ -108,7 +108,7 @@ fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export TERM="screen-256color"
+#export TERM="screen-256color"
 alias tmux="tmux -2"
 stty -ixon # disable flow-control so Ctrl+S and Ctrl+Q work in vim
 
