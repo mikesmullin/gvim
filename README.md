@@ -12,9 +12,8 @@ ln -s ~/.vim/.bashrc ~/
 ln -s ~/.vim/.Xdefaults ~/
 ln -s ~/.vim/.tmux.conf ~/
 ln -s ~/.vim/.fonts ~/; cd .fonts/; sudo fc-cache -fv; cd ..
-ln -s ~/.vim/awesomerc.lua ~/.config/awesome/rc.lua
-sudo ln -s ~/.vim/sdd-wallpaper.png background.png
-sudo ln -s ~/.vim/theme.lua /usr/share/awesome/themes/default/
+sudo mv /etc/xdg/awesome/rc.lua /etc/xdg/awesome/rc.lua.bak
+ln -s ~/.vim/awesome ~/.config/
 cd ~/.vim
 git submodule update --init --recursive # also run periodically to receive updates
 sudo pear install PHP_Beautifier # should append version number
