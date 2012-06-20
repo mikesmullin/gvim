@@ -204,6 +204,9 @@ command! -nargs=0 Html2Haml :silent %!html2haml -s
 "-- Convert current buffer from CSS to SASS
 command! -nargs=0 Css2Sass :silent %!sass-convert --from css --to sass -s
 
+"-- HTMLTidy current buffer
+command! -nargs=0 Tidy :silent %!tidy -q -i -asxhtml -utf8 -omit
+
 " force write as root using sudo (for when you get read-only)
 cmap w!! %!sudo tee > /dev/null %
 
