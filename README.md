@@ -5,7 +5,7 @@ Use it if you want, don't if you dont.
 ## Installation
 
 ```bash
-sudo apt-get install vim-gtk ack-grep exuberant-ctags rxvt-unicode-256color php-pear
+sudo apt-get install vim-gtk ack-grep exuberant-ctags rxvt-unicode-256color php-pear php5-tidy
 git clone git://github.com/mikesmullin/gvim.git ~/.vim
 ln -s ~/.vim/.vimrc ~/
 ln -s ~/.vim/.bashrc ~/

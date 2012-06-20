@@ -205,7 +205,7 @@ command! -nargs=0 Html2Haml :silent %!html2haml -s
 command! -nargs=0 Css2Sass :silent %!sass-convert --from css --to sass -s
 
 "-- HTMLTidy current buffer
-command! -nargs=0 Tidy :silent %!tidy -q -i -asxhtml -utf8 -omit
+command! -nargs=0 Tidy :silent %!php -r "echo tidy_repair_string(file_get_contents('php://stdin'), array('output-xhtml' => true, 'show-body-only' => true, 'doctype' => 'strict', 'drop-font-tags' => true, 'drop-proprietary-attributes' => true, 'lower-literals' => true, 'quote-ampersand' => true, 'wrap' => 0), 'utf8');"
 
 " force write as root using sudo (for when you get read-only)
 cmap w!! %!sudo tee > /dev/null %
@@ -380,7 +380,7 @@ func! FSaveVimRC()
   :so %
   !cd ~/.vim; git shove 'snapshot'
 endfunc
-command! SaveVimRc call FSaveVimRC()
+command! SaveVimRC call FSaveVimRC()
 
 " enable spell checking
 " use zg to add word under cursor to dictionary
