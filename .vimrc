@@ -205,7 +205,7 @@ command! -nargs=0 Html2Haml :silent %!html2haml -s
 command! -nargs=0 Css2Sass :silent %!sass-convert --from css --to sass -s
 
 "-- HTMLTidy current buffer
-command! -nargs=0 Tidy :silent %!php -r "echo tidy_repair_string(file_get_contents('php://stdin'), array('output-xhtml' => true, 'show-body-only' => true, 'doctype' => 'strict', 'wrap' => 1, 'indent' => 1), 'utf8');"
+command! -nargs=0 Tidy :silent %!php -r "echo tidy_repair_string(file_get_contents('php://stdin'), array('output-xhtml' => true, 'show-body-only' => true, 'doctype' => 'strict', 'wrap' => 1, 'indent' => 1, 'fix-uri' => 0), 'utf8');"
 
 " force write as root using sudo (for when you get read-only)
 cmap w!! %!sudo tee > /dev/null %
