@@ -15,6 +15,7 @@ set hlsearch " highlight search matches in document
 set incsearch " highlight search matches dynamically as you type them
 set nofoldenable " disable folding; never used
 set tw=0 " don't auto-insert linebreaks to wrap
+set fo=cqt " don't continue comments onto new line
 " store vim lockfiles in a centralized directory
 set backupdir=/tmp
 set directory=/tmp
