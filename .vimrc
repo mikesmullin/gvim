@@ -271,7 +271,7 @@ command! -nargs=0 Ctags !ctags -R .
 "---- see http://www.expandinghead.net/keycode.html
 autocmd FileType php let b:surround_116 = "<?__('\r')?>"
 "---- Globalization (g11n) -- press cswd
-autocmd FileType php let b:surround_100 = "#{define '\r'}"
+autocmd FileType haml let b:surround_100 = "#{define '\r'}"
 
 "-- ctags
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
