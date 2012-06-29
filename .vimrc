@@ -399,3 +399,6 @@ hi SpellRare cterm=undercurl ctermbg=NONE ctermfg=red guisp=red
 " TODO
 " on save, cleanup whitespace and beautify php
 " on load, by filetype, set indentation rules
+
+" enable vim-xmlfolding
+au BufNewFile,BufRead *.xml,*.htm,*.html,*.rss
