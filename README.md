@@ -18,6 +18,7 @@ cd ~/.vim
 git submodule update --init --recursive # also run periodically to receive updates
 sudo pear install PHP_Beautifier # should append version number
 sudo npm install -g coffee-script
+cp ~/.vim/.gitconfig ~; vim ~/.gitconfig; # change name + email
 ```
 
 ```bash
