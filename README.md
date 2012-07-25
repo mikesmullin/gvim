@@ -5,7 +5,7 @@ Use it if you want, don't if you dont.
 ## Installation
 
 ```bash
-sudo apt-get install vim-gtk ack-grep exuberant-ctags rxvt-unicode-256color php-pear php5-tidy feh
+sudo apt-get install vim-gtk ack-grep exuberant-ctags rxvt-unicode-256color php-pear php5-tidy feh nodejs npm
 git clone git://github.com/mikesmullin/gvim.git ~/.vim
 ln -s ~/.vim/.vimrc ~/
 ln -s ~/.vim/.bashrc ~/
@@ -17,6 +17,7 @@ ln -s ~/.vim/awesome ~/.config/
 cd ~/.vim
 git submodule update --init --recursive # also run periodically to receive updates
 sudo pear install PHP_Beautifier # should append version number
+sudo npm install -g coffee-script
 ```
 
 ```bash
