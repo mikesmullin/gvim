@@ -49,9 +49,6 @@
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "bundle/vim-scmdiff"]
-	path = bundle/vim-scmdiff
-	url = git://github.com/mikesmullin/vim-scmdiff.git
 [submodule "bundle/vim-easytags"]
 	path = bundle/vim-easytags
 	url = git://github.com/xolox/vim-easytags.git
@@ -67,15 +64,9 @@
 [submodule "bundle/gnupg.vim"]
 	path = bundle/gnupg.vim
 	url = git://github.com/vim-scripts/gnupg.vim.git
-[submodule "bundle/vimux-ruby-test"]
-	path = bundle/vimux-ruby-test
-	url = git://github.com/pgr0ss/vimux-ruby-test.git
 [submodule "bundle/csapprox"]
 	path = bundle/csapprox
 	url = git://github.com/godlygeek/csapprox.git
-[submodule "bundle/vimux"]
-	path = bundle/vimux
-	url = git://github.com/mikesmullin/vimux.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
